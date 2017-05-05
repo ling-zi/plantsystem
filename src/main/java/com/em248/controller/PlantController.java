@@ -75,7 +75,8 @@ public class PlantController {
 	}
 
 	@RequestMapping("/changesubmit")
-	private String PlantChangeSub(@RequestParam(name = "pname") String pname,
+	private String PlantChangeSub(@RequestParam(name = "pid") int pid,
+			@RequestParam(name = "pname") String pname,
 			@RequestParam(name = "phylum") String phylum, @RequestParam(name = "pfamily") String pfamily,
 			@RequestParam(name = "pgenus") String pgenus, @RequestParam(name = "pdesc") String pdesc,
 			@RequestParam(name = "pphotos") String pphotos) {

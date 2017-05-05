@@ -168,7 +168,7 @@ public class PlantImpl implements InPlants {
     public boolean updateplant(Plant plant) {
         Connection conn = null;
         PreparedStatement ps = null;
-        String sql = "UPDATE plant SET pname=?,pphotos=?,pdesc=?,pfamily=?,pgenus?,phylum=? WHERE pid=?;";
+        String sql = "UPDATE plant SET pname=?,pphotos=?,pdesc=?,pfamily=?,pgenus=?,phylum=? WHERE pid=?;";
 
         try {
             conn = JDBCTools.getConnection();

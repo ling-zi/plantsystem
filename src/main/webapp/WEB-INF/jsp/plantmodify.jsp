@@ -15,14 +15,16 @@
 	<div>
 
 		<div style="margin: 0px auto; width: 70%; height: 800px">
-			<form action="<%=request.getContextPath() %>/plant/changesubmit">
+			<form action="<%=request.getContextPath() %>/plant/changesubmit?pid=12">
 				<table class="table">
 					<caption>信息修改</caption>
 
 					<thead>
 						<tr>
 							<th>名称</th>
-							<td><input name="pname" class="form-control" type="text"
+							<td>
+							<input name="pid" type="hidden" value = "${plant.pid}"/>
+							<input name="pname" class="form-control" type="text"
 								id="formGroupInputSmall" value="${plant.pname}"></td>
 						</tr>
 						<tr>
