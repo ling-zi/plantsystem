@@ -1,5 +1,6 @@
 package com.em248.controller;
 
+import com.em248.model.Plant;
 import com.em248.model.User;
 import com.em248.service.UserService;
 
@@ -37,11 +38,13 @@ public class LoginController {
     @RequestMapping("")
     private String UserLogin(@RequestParam String username,
                              @RequestParam String password,
-                             HttpServletRequest request) {
+                             HttpServletRequest request,
+                             Map<String, Object> model) {
         // 登录
         // 把从网页中获取的值存起来
         User u = userService.login(username, password);
         if (u != null) {
+        	model.put("user", u);
             // 设置一个登录状态，存放用户名（过滤器可以检测到这个状态，让已登录的用户不被过滤掉）
             request.setAttribute("loginstate", u.getUname());
             request.setAttribute("uid", u.getUid());
@@ -51,14 +54,7 @@ public class LoginController {
         }
 
     }
-    //处理显示个人信息
-    @RequestMapping("/userinfo")
-    private String showUserInfo(int uid, Map<String, Object> model,HttpServletRequest request){
-    	uid = (int) request.getAttribute("uid");
-    	User user = userService.querybyid(uid);
-    	model.put("user", user);
-    	return "/userinfo";
-    }
+
 
     @RequestMapping("/register")
     public String userRegister(@RequestParam(name = "r_username") String username,
@@ -77,4 +73,32 @@ public class LoginController {
         }
     }
 
+    
+  //显示修改个人信息
+  	@RequestMapping("/modify")
+  	public String userModifyPage(@RequestParam(name = "uid") int uid, Map<String, Object> model) {
+		User user = userService.querybyid(uid);
+		model.put("user", user);
+  		return "usermodify";
+  	}
+  	//处理修改个人信息
+  	@RequestMapping("/domodify")
+  	public String doModify(@RequestParam(name="uid") int uid,
+  			@RequestParam(name="uname") String uname,
+  			@RequestParam(name="usexy") String usexy,
+  			@RequestParam(name="uimageurl") String uimageurl,
+  			@RequestParam(name="uemail") String uemail,
+  			@RequestParam(name="ucellphone") String ucellphone,
+  			@RequestParam(name="uaddress") String uaddress
+  			){
+  		User user =new User(uid, uname, uemail,  uimageurl, ucellphone, usexy, uaddress);
+  		boolean b = userService.changeUser(user);
+  		if(b){
+  			return "Success";
+  		}
+  		else{
+  			return "404";
+  		}
+  		
+  	}
 }

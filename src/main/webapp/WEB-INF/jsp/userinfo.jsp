@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>首页</title>
+    <title>个人信息</title>
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/head.css" />
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/footer.css"/>
@@ -13,12 +13,15 @@
 <div>
 
 <div style="margin:0px auto; width:70%;height:800px">
+<form action="<%=request.getContextPath() %>/login/modify?uid=${user.uid}">
 <table class="table">
   <caption>个人信息</caption>
   <thead>
     <tr>
-      <th>昵称</th>
-      <td>${user.uname}</td>
+    
+      <th>用户名</th>
+      <!-- 隐藏域 -->
+      <td><input name="uid" type="hidden" value = "${user.uid}"/>${user.uname}</td>
     </tr>
      <tr>
       <th>头像</th>
@@ -42,11 +45,11 @@
       <td>${user.uaddress}</td>
     </tr >
   </thead>
- 
+  
 </table>
 
-
-
+<input type="submit" value="编辑个人资料">
+</form>
 </div>
 
 </div>

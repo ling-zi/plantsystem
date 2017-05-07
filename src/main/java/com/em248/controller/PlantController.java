@@ -98,14 +98,14 @@ public class PlantController {
 		return "plantmodify";
 
 	}
-
+	//处理修改植物信息
 	@RequestMapping("/changesubmit")
 	private String PlantChangeSub(@RequestParam(name = "pid") int pid,
 			@RequestParam(name = "pname") String pname,
 			@RequestParam(name = "phylum") String phylum, @RequestParam(name = "pfamily") String pfamily,
 			@RequestParam(name = "pgenus") String pgenus, @RequestParam(name = "pdesc") String pdesc,
 			@RequestParam(name = "pphotos") String pphotos) {
-		Plant plant = new Plant(pname, pphotos, pdesc, pfamily, pgenus, phylum);
+		Plant plant = new Plant(pid,pname, pphotos, pdesc, pfamily, pgenus, phylum);
 		boolean b = plantService.changeplant(plant);
 		if (b) {
 			return "Success";

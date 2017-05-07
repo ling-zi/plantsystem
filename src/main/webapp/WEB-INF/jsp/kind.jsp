@@ -10,10 +10,7 @@
 	href="<%=request.getContextPath()%>/css/footer.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-li {
-	width: 90px;
-	background-color: #9D3662;
-}
+
 </style>
 
 

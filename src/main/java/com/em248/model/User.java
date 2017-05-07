@@ -6,7 +6,7 @@ public class User {
 	private String uname;
 	private String uemail;
 	private String upassword;
-	private String uimageurl;
+	private String uimageurl;//头像
 	private String ucellphone;
 	private String usexy;
 	private String uaddress;
@@ -110,6 +110,19 @@ public class User {
 		this.uname = uname;
 		this.uemail = uemail;
 		this.upassword = upassword;
+	}
+	
+
+	public User(int uid, String uname, String uemail, String uimageurl, String ucellphone, String usexy,
+			String uaddress) {
+		super();
+		this.uid = uid;
+		this.uname = uname;
+		this.uemail = uemail;
+		this.uimageurl = uimageurl;
+		this.ucellphone = ucellphone;
+		this.usexy = usexy;
+		this.uaddress = uaddress;
 	}
 
 	public User() {
