@@ -12,7 +12,7 @@
 <div id="main_content">
     <div id="main_content01">
         <div>
-            <form action="<%=request.getContextPath() %>/plant/addplant" method="post" class="form-horizontal">
+            <form action="<%=request.getContextPath() %>/plant/addplant" method="post" enctype="multipart/form-data"  class="form-horizontal">
                 <div class="form-group form-group-sm">
                     <label class="col-sm-2 control-label" for="formGroupInputSmall">名称:</label>
                     <div class="col-sm-2">
@@ -53,8 +53,7 @@
                 <div class="form-group form-group-sm">
                     <label class="col-sm-2 control-label" for="formGroupInputSmall">图片</label>
                     <div class="col-sm-2">
-                        <input name="pphotos" class="form-control" type="text" id="formGroupInputSmall"
-                               placeholder="请输入植物属">
+                        <input name="file" class="form-control" type="file">
                     </div>
                 </div>
                 <input type="submit" value="提交">

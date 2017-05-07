@@ -22,10 +22,6 @@ public class LoginController {
     public LoginController(UserService userService) {
         this.userService = userService;
     }
-
-
-
-
     @RequestMapping("/login_register")
     private String loginRegister(){
         return "/login_register";

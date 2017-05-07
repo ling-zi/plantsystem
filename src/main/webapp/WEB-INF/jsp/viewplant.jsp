@@ -18,6 +18,11 @@ width:20%
 </head>
 <body>
 	<%@include file="/common/head.jsp"%>
+	<div>
+
+<div style="margin:0px auto; width:70%;height:800px">
+
+
 	
 	<div id="plantlist">
 	
@@ -56,7 +61,9 @@ width:20%
 
 
 	</div>
+</div>
 
+</div>
 
 <%@include file="/common/footer.jsp"%>
 </body>

@@ -197,7 +197,7 @@
         -->
 	<div style="text-align: center; margin-top: 50px;">
 
-		<h4 style="font-weight: bold;">Copyright © 2017.Company name All
+		<h4 style="font-weight: bold;">Copyright © 2017.Huashi All
 			rights reserved 花事未了</h4>
 	</div>
 	</div>

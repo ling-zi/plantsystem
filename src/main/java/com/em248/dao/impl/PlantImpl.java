@@ -169,7 +169,7 @@ public class PlantImpl implements InPlants {
         Connection conn = null;
         PreparedStatement ps = null;
         String sql = "UPDATE plant SET pname=?,pphotos=?,pdesc=?,pfamily=?,pgenus=?,phylum=? WHERE pid=?;";
-
+        
         try {
             conn = JDBCTools.getConnection();
             ps = conn.prepareStatement(sql);
@@ -181,6 +181,8 @@ public class PlantImpl implements InPlants {
             ps.setString(6, plant.getPhylum());
             ps.setInt(7, plant.getPid());
             int i = ps.executeUpdate();
+            
+            System.out.println(ps);
             if (i == 0) {
                 return false;
             }

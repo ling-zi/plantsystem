@@ -22,6 +22,13 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!-- 上传文件 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+    <property name="maxUploadSize" value="209715200"/>
+    <property name="defaultEncoding" value="UTF-8"/>
+    <property name="resolveLazily" value="true"/>
+    </bean>
+    
     <mvc:default-servlet-handler></mvc:default-servlet-handler>
     <mvc:annotation-driven></mvc:annotation-driven>
 </beans>
