@@ -31,6 +31,10 @@ public class UserService {
     public boolean changeUser(User user){
         return userimpl.updateuser(user);
     }
+    //query by id
+    public User querybyid(int uid){
+        return userimpl.getUserbyid(uid);
+    }
     //query by name
     public List<User> querybyname(String uname){
         return userimpl.getUserbyname(uname);

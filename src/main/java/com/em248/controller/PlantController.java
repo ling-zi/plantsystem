@@ -114,5 +114,14 @@ public class PlantController {
 		}
 	}
 
-
+	//点击植物分类下的选项（例如，被子植物）在网页右边部分返回被子下面的所有植物AJAX
+	@RequestMapping("/showkinddetail")
+	private String showKinddetail(@RequestParam(name = "phylum") String phylum, Map<String, Object> model){
+		
+		//怎么实现啊伤心
+		List<Plant> plants = plantService.querybyphylum(phylum);
+		model.put("plantsbyphylum", plants);
+		return "";//返回一个页面
+	}
 }
+

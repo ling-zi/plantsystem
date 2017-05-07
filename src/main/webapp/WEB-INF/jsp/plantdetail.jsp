@@ -47,7 +47,46 @@
   </thead>
  
 </table>
+<div name="showcomments">
 
+<table class="table">
+  <caption>用户评论</caption>
+  <thead>
+    <tr>
+      <th>用户</th>
+      <th>留言板</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>小明</td>
+      <td>这个苹果很好吃</td>
+    </tr>
+    <tr>
+      <td>小狗</td>
+      <td>图片有误</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+</div>
+<div name="comment">
+<form action="">
+<tr style="border-bottom: 1px solid #DDDDDD">
+							<th>留言</th>
+							<td><textarea name="pdesc" class="form-control" rows="5"
+									>请输入您的留言</textarea></td>
+</tr>
+
+<!-- 留言展示 -->
+
+<br />
+<button type="submit" class="btn btn-default">发表</button>
+</form>
+
+</div>
 </div>
 
 </div>

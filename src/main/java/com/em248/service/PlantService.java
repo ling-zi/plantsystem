@@ -46,7 +46,11 @@ public class PlantService {
     public List<Plant> querybyname(String pname) {
         return plantimpl.queryplantbypname(pname);
     }
-
+    //query by phylum
+    public List<Plant> querybyphylum(String phylum){
+    	return plantimpl.queryplantbyphylum(phylum);
+    }
+    
     //query all
     public List<Plant> queryallplant() {
         return plantimpl.getAllplant();

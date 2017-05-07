@@ -25,7 +25,8 @@
 
             </dl>
             <dl class="nav_dl">
-                <dt class="nav_dt"><a href="/">分类</a></dt>
+                <dt class="nav_dt">
+                	<a href="<%=request.getContextPath() %>/kind">分类</a></dt>
 
             </dl>
             <dl class="nav_dl">

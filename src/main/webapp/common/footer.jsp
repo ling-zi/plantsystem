@@ -9,7 +9,7 @@
         <div class="footer-middle-in">
             <h6>百科协议</h6>
             <ul style="margin-right: 0px;padding-left: 0px;">
-                <li style="width:227px"><a href="contact.html">使用规则</a></li>
+                <li style="width:227px"><a href="<%=request.getContextPath() %>/WEB-INF/jsp/rules.jsp">使用规则</a></li>
                 <li><a href="contact.html">隐私政策</a></li>
 
             </ul>

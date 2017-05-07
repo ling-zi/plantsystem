@@ -11,6 +11,8 @@ public interface InUser {
 		boolean updateuser(User user);
 		//删除用户（通过用户id删除）
 		boolean deleteuser(int uid);
+		//通过id查询用户
+		User getUserbyid(int uid);
 		//通过名字查询用户
 		List<User> getUserbyname(String uname);
 		//查询用户(通过用户登录邮箱和密码查询)

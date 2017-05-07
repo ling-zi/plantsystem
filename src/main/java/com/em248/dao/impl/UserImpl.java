@@ -103,7 +103,36 @@ public class UserImpl implements InUser {
         }
         return false;
     }
+    
+  //实现通过id查找用户
+    @Override
+    public User getUserbyid(int uid) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        User user = null;
+        String sql = "SELECT * from user where uid = ?";
+        try {
+            conn = JDBCTools.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, uid);
+            rs = ps.executeQuery();
+            user= null;
+            while (rs.next()) {
+                user = new User(rs.getInt("uid"), rs.getInt("ustatus"), rs.getString("uname"),
+                        rs.getString("uemail"), rs.getString("upassword"), rs.getString("uimageurl"),
+                        rs.getString("ucellphone"), rs.getString("usexy"), rs.getString("uaddress"));
+                return user;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCTools.releaseDB(conn, ps, null);
+        }
+        return null;
 
+    }
+    
     //实现通过id和密码查询用户
     //实则用邮箱登录
     @Override

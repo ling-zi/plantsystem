@@ -8,6 +8,8 @@ import java.util.List;
 public interface InPlants {
 		//查询植物(通过植物名称)
 		List<Plant> queryplantbypname(String pname);
+		//查询植物(通过植物种类)
+		List<Plant> queryplantbyphylum(String phylum);
 		//查询植物(通过植物id)
 		Plant queryplantbypid(int pid);
 		//删除植物(通过植物id)

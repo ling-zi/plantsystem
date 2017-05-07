@@ -229,4 +229,42 @@ public class PlantImpl implements InPlants {
 
     }
 
+	@Override
+	public List<Plant> queryplantbyphylum(String phylum) {
+
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        // 创建一个list用于接收查询出来的数据
+        List<Plant> ls = new ArrayList<>();
+        String sql = "select * from plant where phylum =?";
+        try {
+            conn = JDBCTools.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, phylum);
+            rs = ps.executeQuery();
+            Plant plant = null;
+            while (rs.next()) {
+                // 获取书的字段值
+                plant = new Plant(rs.getInt("pid"), rs.getString("pname"),
+                        rs.getString("pphotos"), rs.getString("pdesc"),
+                        rs.getString("pfamily"), rs.getString("pgenus"), rs.getString("phylum"));
+                // 将记录存入list
+                ls.add(plant);
+
+            }
+            // 返回list
+            return ls;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCTools.releaseDB(conn, ps, rs);
+        }
+        return null;
+
+    
+	}
+
 }
